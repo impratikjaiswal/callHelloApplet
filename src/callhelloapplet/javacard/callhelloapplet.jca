@@ -1,0 +1,769 @@
+// converted by version 1.3
+// on Tue Jul 28 17:22:14 IST 2015
+
+.package callhelloapplet {
+	.aid 0xA0:0x0:0x0:0x0:0x18:0x53:0x7:0x0:0x0:0x0:0x1:0x40;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.3;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x12:0x0:0x0:0x0 1.0;		//uicc/toolkit
+		0xA0:0x0:0x0:0x0:0x87:0x10:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x13:0x20:0x0:0x0 1.0;		//uicc/usim/toolkit
+		0xA0:0x0:0x0:0x0:0x87:0x10:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x13:0x10:0x0:0x0 1.0;		//uicc/usim/access
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x18:0x53:0x7:0x0:0x0:0x0:0x1:0x41 callHelloApplet;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef byte callHelloApplet/install;
+		// 1
+		instanceFieldRef 1.9 callHelloApplet/toolkitRegistry;
+		// 2
+		instanceFieldRef boolean callHelloApplet/isStatus;
+		// 3
+		instanceFieldRef byte callHelloApplet/countStatus;
+		// 4
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 5
+		classRef 1.9;		// uicc/toolkit/ToolkitRegistry
+		// 6
+		staticFieldRef byte[] callHelloApplet/SELECT_DT;
+		// 7
+		staticMethodRef callHelloApplet/initMenu([B)V;
+		// 8
+		staticFieldRef byte[] callHelloApplet/SELECT_PLI;
+		// 9
+		staticFieldRef byte[] callHelloApplet/SELECT_USSD_P;
+		// 10
+		staticFieldRef byte[] callHelloApplet/SELECT_USSD_U;
+		// 11
+		staticFieldRef byte[] callHelloApplet/SELECT_USSD_DT_P;
+		// 12
+		staticFieldRef byte[] callHelloApplet/SELECT_USSD_DT_U;
+		// 13
+		staticFieldRef byte[] callHelloApplet/SELECT_STATUS;
+		// 14
+		staticFieldRef byte[] callHelloApplet/LOCI_FILELIST;
+		// 15
+		staticFieldRef byte[] callHelloApplet/USIM_AID;
+		// 16
+		classRef callHelloApplet;
+		// 17
+		staticMethodRef callHelloApplet/<init>()V;
+		// 18
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 19
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 20
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 21
+		staticFieldRef byte[] callHelloApplet/dtHello;
+		// 22
+		staticMethodRef callHelloApplet/processDT([B)V;
+		// 23
+		staticMethodRef 1.14.0()Luicc/toolkit/ProactiveHandler;;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 24
+		classRef 1.5;		// uicc/toolkit/ProactiveHandler
+		// 25
+		staticFieldRef byte[] callHelloApplet/ussdOrg;
+		// 26
+		staticFieldRef byte[] callHelloApplet/ussd;
+		// 27
+		staticMethodRef 0.16.2([BS[BSS)S;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+		// 28
+		staticFieldRef byte[] callHelloApplet/alpha;
+		// 29
+		staticMethodRef callHelloApplet/sevenBitCoding([BSS[BS)S;
+		// 30
+		staticMethodRef callHelloApplet/processPLI(B)V;
+		// 31
+		staticFieldRef byte[] callHelloApplet/dtATR;
+		// 32
+		staticFieldRef byte[] callHelloApplet/dtTP;
+		// 33
+		staticMethodRef callHelloApplet/processCallControlBySim()Z;
+		// 34
+		staticFieldRef byte[] callHelloApplet/dtCall;
+		// 35
+		staticMethodRef callHelloApplet/menuselection()V;
+		// 36
+		staticFieldRef byte[] callHelloApplet/dtEF;
+		// 37
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 38
+		staticMethodRef 1.16.0()Luicc/toolkit/ToolkitRegistry;;		// uicc/toolkit/ToolkitRegistrySystem.getEntry()Luicc/toolkit/ToolkitRegistry;
+			.descriptor	Luicc/toolkit/ToolkitRegistry;	1.9;
+
+		// 39
+		staticFieldRef byte[] callHelloApplet/dtStatus;
+		// 40
+		staticFieldRef byte[] callHelloApplet/dtOTA;
+		// 41
+		staticMethodRef 1.12.0()Luicc/toolkit/EnvelopeHandler;;		// uicc/toolkit/EnvelopeHandlerSystem.getTheHandler()Luicc/toolkit/EnvelopeHandler;
+			.descriptor	Luicc/toolkit/EnvelopeHandler;	1.3;
+
+		// 42
+		classRef 1.3;		// uicc/toolkit/EnvelopeHandler
+		// 43
+		staticFieldRef byte[] callHelloApplet/dtBeforeUSSD;
+		// 44
+		staticMethodRef callHelloApplet/processUSSD(BBZ)B;
+		// 45
+		staticFieldRef byte[] callHelloApplet/dtAfterUSSD;
+		// 46
+		staticMethodRef callHelloApplet/processDT([BB)V;
+		// 47
+		staticMethodRef 1.15.0()Luicc/toolkit/EnvelopeResponseHandler;;		// uicc/toolkit/EnvelopeResponseHandlerSystem.getTheHandler()Luicc/toolkit/EnvelopeResponseHandler;
+			.descriptor	Luicc/toolkit/EnvelopeResponseHandler;	1.4;
+
+		// 48
+		classRef 1.4;		// uicc/toolkit/EnvelopeResponseHandler
+	}
+
+	.class public callHelloApplet 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 1.9 toolkitRegistry 0;		// Luicc/toolkit/ToolkitRegistry;
+			private byte install 1;		// B
+			private boolean isStatus 2;		// Z
+			private byte countStatus 3;		// B
+			protected static callHelloApplet instance 0;		// Lcallhelloapplet/callHelloApplet;
+			private static final byte[] USIM_AID = {-96,0,0,0,-121,16,2,-1,102,-1,1,-119,-80,0,1,-1};		// [B
+			private static final byte[] LOCI_FILELIST = {2,63,0,127,32,111,126,63,0,127,-1,111,126};		// [B
+			private static final byte[] SELECT_USSD_U = {83,101,110,100,32,85,83,83,68,32,85};		// [B
+			private static final byte[] SELECT_USSD_P = {83,101,110,100,32,85,83,83,68,32,80};		// [B
+			private static final byte[] SELECT_DT = {83,101,110,100,32,68,84};		// [B
+			private static final byte[] SELECT_PLI = {83,101,110,100,32,80,76,73};		// [B
+			private static final byte[] SELECT_STATUS = {83,116,97,116,117,115};		// [B
+			private static final byte[] SELECT_USSD_DT_P = {83,101,110,100,32,85,83,83,68,65,110,100,32,68,84,32,80};		// [B
+			private static final byte[] SELECT_USSD_DT_U = {83,101,110,100,32,85,83,83,68,65,110,100,32,68,84,32,85};		// [B
+			private static final byte[] dtHello = {84,104,105,115,32,105,115,32,102,105,114,115,116,32,72,101,108,108,111,32,102,111,114,109,32,71,108,111,98,101,84,111,117,99,104,33,33,33};		// [B
+			private static final byte[] dtTP = {84,101,114,109,105,110,97,108,32,80,114,111,102,105,108,101};		// [B
+			private static final byte[] dtATR = {65,84,82};		// [B
+			private static final byte[] dtCall = {67,97,108,108,32,67,111,110,116,114,111,108};		// [B
+			private static final byte[] dtBeforeUSSD = {67,108,105,99,107,32,116,111,32,83,101,110,100,32,85,83,83,68};		// [B
+			private static byte[] dtAfterUSSD = {83,101,110,100,32,85,83,83,68,32,119,105,116,104,32,84,82,32,0};		// [B
+			private static final byte[] dtOTA = {79,84,65};		// [B
+			private static final byte[] alpha = {83,101,110,100,105,110,103,32,85,83,83,68};		// [B
+			private static final byte[] dtStatus = {83,116,97,116,117,115};		// [B
+			private static final byte[] dtEF = {69,70,32,85,112,100,97,116,101,100};		// [B
+			private static byte[] ussd = {42,49,52,48,35};		// [B
+			private static byte[] ussdOrg = {42,49,52,48,35};		// [B
+			private static final byte DT_CQ = -127;		// B
+			private static final byte DCS_8_BIT_DATA = 4;		// B
+			private static final byte USSD_DCS_UNPACKED = 68;		// B
+			private static final byte USSD_DCS_PACKED = 15;		// B
+			private static final byte VALUE_ZERO = 0;		// B
+			private static final byte OFFSET_ZERO = 0;		// B
+			private static final byte PLI_CQ_IMEI = 1;		// B
+			private static final byte PLI_CQ_LOCATION = 0;		// B
+			private static final byte TAG_USSD_STRING = 10;		// B
+			private static final byte PRO_CMD_SEND_USSD = 18;		// B
+			private static final byte DURATION = 30;		// B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			processToolkit(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.8 { 		// uicc/toolkit/ToolkitInterface
+				8;		// processToolkit(S)V
+			}
+
+			.interface 1.7 { 		// uicc/toolkit/ToolkitConstants
+			}
+
+			.interface 2.0 { 		// uicc/usim/toolkit/ToolkitConstants
+			}
+
+			.interface 3.0 { 		// uicc/usim/access/SIMConstants
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 8;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 4;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					sconst_0;
+					putfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					aload_0;
+					invokevirtual 37;		// register()V
+					aload_0;
+					invokestatic 38;		// uicc/toolkit/ToolkitRegistrySystem.getEntry()Luicc/toolkit/ToolkitRegistry;
+					putfield_a 1;		// reference callhelloapplet/callHelloApplet.toolkitRegistry
+					aload_0;
+					dup;
+					getfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					sconst_1;
+					sadd;
+					s2b;
+					putfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					getfield_a_this 1;		// reference callhelloapplet/callHelloApplet.toolkitRegistry
+					bspush 127;
+					invokeinterface 2 5 0;		// uicc/toolkit/ToolkitRegistry
+					aload_0;
+					dup;
+					getfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					sconst_1;
+					sadd;
+					s2b;
+					putfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					getfield_a_this 1;		// reference callhelloapplet/callHelloApplet.toolkitRegistry
+					sconst_1;
+					invokeinterface 2 5 0;		// uicc/toolkit/ToolkitRegistry
+					aload_0;
+					dup;
+					getfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					sconst_1;
+					sadd;
+					s2b;
+					putfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					getfield_a_this 1;		// reference callhelloapplet/callHelloApplet.toolkitRegistry
+					bspush 9;
+					invokeinterface 2 5 0;		// uicc/toolkit/ToolkitRegistry
+					aload_0;
+					dup;
+					getfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					sconst_1;
+					sadd;
+					s2b;
+					putfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					getfield_a_this 1;		// reference callhelloapplet/callHelloApplet.toolkitRegistry
+					bspush 12;
+					invokeinterface 2 5 0;		// uicc/toolkit/ToolkitRegistry
+					aload_0;
+					dup;
+					getfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					sconst_1;
+					sadd;
+					s2b;
+					putfield_b 0;		// byte callhelloapplet/callHelloApplet.install
+					aload_0;
+					getstatic_a 6;		// reference callhelloapplet/callHelloApplet.SELECT_DT
+					invokespecial 7;		// callhelloapplet/callHelloApplet.initMenu([B)V
+					aload_0;
+					getstatic_a 8;		// reference callhelloapplet/callHelloApplet.SELECT_PLI
+					invokespecial 7;		// callhelloapplet/callHelloApplet.initMenu([B)V
+					aload_0;
+					getstatic_a 9;		// reference callhelloapplet/callHelloApplet.SELECT_USSD_P
+					invokespecial 7;		// callhelloapplet/callHelloApplet.initMenu([B)V
+					aload_0;
+					getstatic_a 10;		// reference callhelloapplet/callHelloApplet.SELECT_USSD_U
+					invokespecial 7;		// callhelloapplet/callHelloApplet.initMenu([B)V
+					aload_0;
+					getstatic_a 11;		// reference callhelloapplet/callHelloApplet.SELECT_USSD_DT_P
+					invokespecial 7;		// callhelloapplet/callHelloApplet.initMenu([B)V
+					aload_0;
+					getstatic_a 12;		// reference callhelloapplet/callHelloApplet.SELECT_USSD_DT_U
+					invokespecial 7;		// callhelloapplet/callHelloApplet.initMenu([B)V
+					aload_0;
+					getstatic_a 13;		// reference callhelloapplet/callHelloApplet.SELECT_STATUS
+					invokespecial 7;		// callhelloapplet/callHelloApplet.initMenu([B)V
+					getfield_a_this 1;		// reference callhelloapplet/callHelloApplet.toolkitRegistry
+					bspush 124;
+					getstatic_a 14;		// reference callhelloapplet/callHelloApplet.LOCI_FILELIST
+					sconst_0;
+					getstatic_a 14;		// reference callhelloapplet/callHelloApplet.LOCI_FILELIST
+					arraylength;
+					getstatic_a 15;		// reference callhelloapplet/callHelloApplet.USIM_AID
+					sconst_0;
+					getstatic_a 15;		// reference callhelloapplet/callHelloApplet.USIM_AID
+					arraylength;
+					s2b;
+					invokeinterface 8 5 14;		// uicc/toolkit/ToolkitRegistry
+					getfield_a_this 1;		// reference callhelloapplet/callHelloApplet.toolkitRegistry
+					sconst_2;
+					invokeinterface 2 5 0;		// uicc/toolkit/ToolkitRegistry
+					getfield_a_this 1;		// reference callhelloapplet/callHelloApplet.toolkitRegistry
+					bspush 30;
+					invokeinterface 2 5 10;		// uicc/toolkit/ToolkitRegistry
+					return;
+		}
+
+		.method private initMenu([B)V {
+			.stack 8;
+			.locals 0;
+
+				L0:	getfield_a_this 1;		// reference callhelloapplet/callHelloApplet.toolkitRegistry
+					aload_1;
+					sconst_0;
+					aload_1;
+					arraylength;
+					sconst_0;
+					sconst_0;
+					sconst_0;
+					sconst_0;
+					invokeinterface 8 5 6;		// uicc/toolkit/ToolkitRegistry
+					pop;
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	new 16;		// callhelloapplet/callHelloApplet
+					invokespecial 17;		// callhelloapplet/callHelloApplet.<init>()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 18;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 19;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_0;
+					baload;
+					ifeq L4;
+				L3:	sspush 28160;
+					invokestatic 20;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_2;
+					sconst_1;
+					baload;
+					bspush 68;
+					if_scmpeq L6;
+				L5:	sspush 27904;
+					invokestatic 20;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	aload_0;
+					getstatic_a 21;		// reference callhelloapplet/callHelloApplet.dtHello
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					return;
+		}
+
+		.method private processPLI(B)V {
+			.stack 4;
+			.locals 1;
+
+				L0:	invokestatic 23;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+					astore_2;
+					aload_2;
+					bspush 38;
+					sload_1;
+					bspush -126;
+					invokeinterface 4 24 23;		// uicc/toolkit/ProactiveHandler
+					aload_2;
+					invokeinterface 1 24 24;		// uicc/toolkit/ProactiveHandler
+					pop;
+					return;
+		}
+
+		.method private processDT([B)V {
+			.stack 6;
+			.locals 1;
+
+				L0:	invokestatic 23;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+					astore_2;
+					aload_2;
+					bspush 33;
+					bspush -127;
+					bspush -126;
+					invokeinterface 4 24 23;		// uicc/toolkit/ProactiveHandler
+					aload_2;
+					bspush 13;
+					sconst_4;
+					aload_1;
+					sconst_0;
+					aload_1;
+					arraylength;
+					invokeinterface 6 24 21;		// uicc/toolkit/ProactiveHandler
+					aload_2;
+					invokeinterface 1 24 24;		// uicc/toolkit/ProactiveHandler
+					pop;
+					return;
+		}
+
+		.method private processDT([BB)V {
+			.stack 3;
+			.locals 0;
+
+				L0:	aload_1;
+					aload_1;
+					arraylength;
+					sconst_1;
+					ssub;
+					sload_2;
+					bastore;
+					aload_0;
+					aload_1;
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					return;
+		}
+
+		.method private processUSSD(BBZ)B {
+			.stack 6;
+			.locals 2;
+
+				L0:	sload_2;
+					bspush 48;
+					sor;
+					sstore_2;
+					getstatic_a 25;		// reference callhelloapplet/callHelloApplet.ussdOrg
+					sconst_0;
+					getstatic_a 26;		// reference callhelloapplet/callHelloApplet.ussd
+					sconst_0;
+					getstatic_a 25;		// reference callhelloapplet/callHelloApplet.ussdOrg
+					arraylength;
+					s2b;
+					invokestatic 27;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getstatic_a 26;		// reference callhelloapplet/callHelloApplet.ussd
+					getstatic_a 26;		// reference callhelloapplet/callHelloApplet.ussd
+					arraylength;
+					sconst_1;
+					ssub;
+					sconst_1;
+					ssub;
+					sload_2;
+					bastore;
+					getstatic_a 26;		// reference callhelloapplet/callHelloApplet.ussd
+					arraylength;
+					s2b;
+					sstore 4;
+					invokestatic 23;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+					astore 5;
+					aload 5;
+					bspush 18;
+					sconst_0;
+					bspush -126;
+					invokeinterface 4 24 23;		// uicc/toolkit/ProactiveHandler
+					sload_3;
+					ifeq L2;
+				L1:	aload 5;
+					bspush -123;
+					getstatic_a 28;		// reference callhelloapplet/callHelloApplet.alpha
+					sconst_0;
+					getstatic_a 28;		// reference callhelloapplet/callHelloApplet.alpha
+					arraylength;
+					invokeinterface 5 24 15;		// uicc/toolkit/ProactiveHandler
+				L2:	sload_1;
+					bspush 15;
+					if_scmpne L4;
+				L3:	aload_0;
+					getstatic_a 26;		// reference callhelloapplet/callHelloApplet.ussd
+					sconst_0;
+					sload 4;
+					getstatic_a 26;		// reference callhelloapplet/callHelloApplet.ussd
+					sconst_0;
+					invokespecial 29;		// callhelloapplet/callHelloApplet.sevenBitCoding([BSS[BS)S
+					s2b;
+					sstore 4;
+				L4:	aload 5;
+					bspush -118;
+					sload_1;
+					getstatic_a 26;		// reference callhelloapplet/callHelloApplet.ussd
+					sconst_0;
+					sload 4;
+					invokeinterface 6 24 21;		// uicc/toolkit/ProactiveHandler
+					aload 5;
+					invokeinterface 1 24 24;		// uicc/toolkit/ProactiveHandler
+					sreturn;
+		}
+
+		.method public processToolkit(S)V 8 {
+			.stack 4;
+			.locals 0;
+
+				L0:	sload_1;
+					slookupswitch L10 7 1 L2 2 L9 7 L4 9 L3 19 L6 124 L5 127 L1;
+				L1:	aload_0;
+					sconst_0;
+					invokespecial 30;		// callhelloapplet/callHelloApplet.processPLI(B)V
+					aload_0;
+					getstatic_a 31;		// reference callhelloapplet/callHelloApplet.dtATR
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					goto L10;
+				L2:	aload_0;
+					sconst_1;
+					invokespecial 30;		// callhelloapplet/callHelloApplet.processPLI(B)V
+					aload_0;
+					getstatic_a 32;		// reference callhelloapplet/callHelloApplet.dtTP
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					goto L10;
+				L3:	aload_0;
+					invokespecial 33;		// callhelloapplet/callHelloApplet.processCallControlBySim()Z
+					pop;
+					aload_0;
+					getstatic_a 34;		// reference callhelloapplet/callHelloApplet.dtCall
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					goto L10;
+				L4:	aload_0;
+					invokespecial 35;		// callhelloapplet/callHelloApplet.menuselection()V
+					goto L10;
+				L5:	aload_0;
+					getstatic_a 36;		// reference callhelloapplet/callHelloApplet.dtEF
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					goto L10;
+				L6:	getfield_b_this 2;		// boolean callhelloapplet/callHelloApplet.isStatus
+					ifeq L10;
+				L7:	aload_0;
+					dup;
+					getfield_b 3;		// byte callhelloapplet/callHelloApplet.countStatus
+					dup_x 18;
+					sconst_1;
+					sadd;
+					s2b;
+					putfield_b 3;		// byte callhelloapplet/callHelloApplet.countStatus
+					sconst_5;
+					if_scmplt L10;
+				L8:	aload_0;
+					sconst_0;
+					putfield_b 2;		// boolean callhelloapplet/callHelloApplet.isStatus
+					aload_0;
+					getstatic_a 39;		// reference callhelloapplet/callHelloApplet.dtStatus
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					goto L10;
+				L9:	aload_0;
+					getstatic_a 40;		// reference callhelloapplet/callHelloApplet.dtOTA
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					goto L10;
+				L10:	return;
+		}
+
+		.method private menuselection()V {
+			.stack 4;
+			.locals 2;
+
+				L0:	sconst_0;
+					sstore_1;
+					invokestatic 41;		// uicc/toolkit/EnvelopeHandlerSystem.getTheHandler()Luicc/toolkit/EnvelopeHandler;
+					astore_2;
+					aload_2;
+					invokeinterface 1 42 15;		// uicc/toolkit/EnvelopeHandler
+					stableswitch L8 1 7 L1 L2 L3 L4 L5 L6 L7;
+				L1:	aload_0;
+					getstatic_a 21;		// reference callhelloapplet/callHelloApplet.dtHello
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					goto L8;
+				L2:	aload_0;
+					sconst_1;
+					invokespecial 30;		// callhelloapplet/callHelloApplet.processPLI(B)V
+					goto L8;
+				L3:	aload_0;
+					getstatic_a 43;		// reference callhelloapplet/callHelloApplet.dtBeforeUSSD
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					aload_0;
+					bspush 15;
+					sconst_1;
+					sconst_1;
+					invokespecial 44;		// callhelloapplet/callHelloApplet.processUSSD(BBZ)B
+					sstore_1;
+					aload_0;
+					getstatic_a 45;		// reference callhelloapplet/callHelloApplet.dtAfterUSSD
+					sload_1;
+					invokespecial 46;		// callhelloapplet/callHelloApplet.processDT([BB)V
+					goto L8;
+				L4:	aload_0;
+					getstatic_a 43;		// reference callhelloapplet/callHelloApplet.dtBeforeUSSD
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					aload_0;
+					bspush 68;
+					sconst_2;
+					sconst_1;
+					invokespecial 44;		// callhelloapplet/callHelloApplet.processUSSD(BBZ)B
+					sstore_1;
+					aload_0;
+					getstatic_a 45;		// reference callhelloapplet/callHelloApplet.dtAfterUSSD
+					sload_1;
+					invokespecial 46;		// callhelloapplet/callHelloApplet.processDT([BB)V
+					goto L8;
+				L5:	aload_0;
+					getstatic_a 43;		// reference callhelloapplet/callHelloApplet.dtBeforeUSSD
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					aload_0;
+					bspush 15;
+					sconst_3;
+					sconst_0;
+					invokespecial 44;		// callhelloapplet/callHelloApplet.processUSSD(BBZ)B
+					sstore_1;
+					aload_0;
+					getstatic_a 45;		// reference callhelloapplet/callHelloApplet.dtAfterUSSD
+					sload_1;
+					invokespecial 46;		// callhelloapplet/callHelloApplet.processDT([BB)V
+					goto L8;
+				L6:	aload_0;
+					getstatic_a 43;		// reference callhelloapplet/callHelloApplet.dtBeforeUSSD
+					invokespecial 22;		// callhelloapplet/callHelloApplet.processDT([B)V
+					aload_0;
+					bspush 68;
+					sconst_4;
+					sconst_0;
+					invokespecial 44;		// callhelloapplet/callHelloApplet.processUSSD(BBZ)B
+					sstore_1;
+					aload_0;
+					getstatic_a 45;		// reference callhelloapplet/callHelloApplet.dtAfterUSSD
+					sload_1;
+					invokespecial 46;		// callhelloapplet/callHelloApplet.processDT([BB)V
+					goto L8;
+				L7:	aload_0;
+					sconst_1;
+					putfield_b 2;		// boolean callhelloapplet/callHelloApplet.isStatus
+					aload_0;
+					sconst_0;
+					putfield_b 3;		// byte callhelloapplet/callHelloApplet.countStatus
+				L8:	return;
+		}
+
+		.method private processCallControlBySim()Z {
+			.stack 3;
+			.locals 2;
+
+				L0:	invokestatic 41;		// uicc/toolkit/EnvelopeHandlerSystem.getTheHandler()Luicc/toolkit/EnvelopeHandler;
+					astore_1;
+					invokestatic 47;		// uicc/toolkit/EnvelopeResponseHandlerSystem.getTheHandler()Luicc/toolkit/EnvelopeResponseHandler;
+					astore_2;
+					aload_2;
+					sconst_1;
+					sconst_1;
+					invokeinterface 3 48 24;		// uicc/toolkit/EnvelopeResponseHandler
+					sconst_1;
+					sreturn;
+		}
+
+		.method private sevenBitCoding([BSS[BS)S {
+			.stack 4;
+			.locals 6;
+
+				L0:	sload_3;
+					bspush 8;
+					srem;
+					bspush 7;
+					if_scmpne L2;
+				L1:	aload_1;
+					sload_2;
+					sload_3;
+					sadd;
+					bspush 13;
+					bastore;
+					sinc 3 1;
+				L2:	sconst_0;
+					sstore 6;
+					sconst_0;
+					sstore 7;
+					sconst_0;
+					sstore 8;
+					sconst_0;
+					sstore 9;
+					sconst_0;
+					sstore 10;
+					sconst_0;
+					sstore 11;
+					goto L9;
+				L3:	aload_1;
+					sload_2;
+					sload 11;
+					sadd;
+					baload;
+					sspush 255;
+					sand;
+					sstore 8;
+					sload 8;
+					ifge L5;
+				L4:	sload 8;
+					sspush 256;
+					sadd;
+					sstore 8;
+				L5:	sload 8;
+					bspush 127;
+					sand;
+					sstore 8;
+					sload 11;
+					bspush 8;
+					srem;
+					sstore 7;
+					sload 7;
+					ifne L7;
+				L6:	aload 4;
+					sload 5;
+					sload 6;
+					sadd;
+					sload 8;
+					s2b;
+					bastore;
+					goto L8;
+				L7:	sload 8;
+					bspush 8;
+					sload 7;
+					ssub;
+					sshl;
+					sspush 255;
+					sand;
+					sstore 9;
+					sload 8;
+					sload 7;
+					sshr;
+					sspush 255;
+					sand;
+					sstore 10;
+					aload 4;
+					sload 5;
+					sload 6;
+					sadd;
+					dup2;
+					baload;
+					sload 9;
+					s2b;
+					sor;
+					bastore;
+					sinc 6 1;
+					aload 4;
+					sload 5;
+					sload 6;
+					sadd;
+					sload 10;
+					s2b;
+					bastore;
+				L8:	sinc 11 1;
+				L9:	sload 11;
+					sload_3;
+					if_scmplt L3;
+				L10:	sload_3;
+					bspush 8;
+					sdiv;
+					bspush 7;
+					smul;
+					sload_3;
+					bspush 8;
+					srem;
+					sadd;
+					sreturn;
+		}
+
+	}
+
+}
